@@ -39,22 +39,21 @@ decrypt() {
 }
 
 generate_key() {
-  gpg --full-generate-key
+  read -p "Name: " name
+  read -p "Email: " email
+
+  json=$(jq -n --arg name "$name" --arg email "$email" \
+    '{ name: $name, email: $email }')
+
+  curl -s -X POST "$API_URL/api/gpg/keys/generate" \
+    -H "Content-Type: application/json" \
+    -d "$json"
 }
 
 list_keys() {
-  gpg --list-keys
+  curl -s "$API_URL/api/gpg/keys" | jq -r .keys
 }
 
-import_key() {
-  read -p "Key file: " file
-  gpg --import "$file"
-}
-
-export_key() {
-  read -p "Key ID/email: " key
-  gpg --export --armor "$key"
-}
 
 set_api() {
   read -p "API URL: " API_URL

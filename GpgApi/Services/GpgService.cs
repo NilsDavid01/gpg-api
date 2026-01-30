@@ -4,7 +4,7 @@ namespace GpgApi.Services;
 
 public class GpgService
 {
-    private string RunCommand(string args, string input = "")
+    private string RunCommand(string args, string? input = null)
     {
         var psi = new ProcessStartInfo
         {
@@ -36,11 +36,38 @@ public class GpgService
 
     public string Encrypt(string text, string recipient)
     {
-        return RunCommand($"--encrypt --armor -r {recipient}", text);
+        return RunCommand(
+            $"--batch --yes --armor --encrypt -r \"{recipient}\"",
+            text
+        );
     }
 
     public string Decrypt(string encryptedText)
     {
-        return RunCommand("--decrypt", encryptedText);
+        return RunCommand(
+            "--batch --yes --decrypt",
+            encryptedText
+        );
+    }
+
+    public void GenerateKey(string name, string email)
+    {
+        var keySpec = $@"
+Key-Type: RSA
+Key-Length: 2048
+Name-Real: {name}
+Name-Email: {email}
+Expire-Date: 0
+%no-protection
+%commit
+";
+
+        RunCommand("--batch --generate-key", keySpec);
+    }
+
+    public string ListKeys()
+    {
+        return RunCommand("--list-keys");
     }
 }
+
