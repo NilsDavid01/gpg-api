@@ -6,3 +6,5 @@ An API written in C# that allows users to both encrypt and decrypt text-strings 
 * .NET 8 (Required by the API)
 * Bash (Required by the client)
 * cURL (Required by the client)
+
+# How to run API
