@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GpgApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+684fe83eb8c0b56ae412f82ba2278fe83f91d951")]
 [assembly: System.Reflection.AssemblyProductAttribute("GpgApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GpgApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

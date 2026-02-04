@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/david/Documents/KYH/CICD/API-Project/GPT/GpgApiProject/GpgApi/GpgApi.csproj",
+      "projectUniqueName": "/home/david/Documents/KYH/CICD/API-Project/git-repo/gpg-api/GpgApi/GpgApi.csproj",
       "projectName": "GpgApi",
-      "projectPath": "/home/david/Documents/KYH/CICD/API-Project/GPT/GpgApiProject/GpgApi/GpgApi.csproj",
+      "projectPath": "/home/david/Documents/KYH/CICD/API-Project/git-repo/gpg-api/GpgApi/GpgApi.csproj",
       "packagesPath": "/home/david/.nuget/packages/",
-      "outputPath": "/home/david/Documents/KYH/CICD/API-Project/GPT/GpgApiProject/GpgApi/obj/",
+      "outputPath": "/home/david/Documents/KYH/CICD/API-Project/git-repo/gpg-api/GpgApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/david/.nuget/NuGet/NuGet.Config"
