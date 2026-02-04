@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CtazzADX3MQ=",
+  "dgSpecHash": "3BD/ZA3/LJ4=",
   "success": true,
-  "projectFilePath": "/home/david/Documents/KYH/CICD/API-Project/GPT/GpgApiProject/GpgApi/GpgApi.csproj",
+  "projectFilePath": "/home/david/Documents/KYH/CICD/API-Project/git-repo/gpg-api/GpgApi/GpgApi.csproj",
   "expectedPackageFiles": [
     "/home/david/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.22/microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
     "/home/david/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.22/microsoft.netcore.app.host.linux-x64.8.0.22.nupkg.sha512"
