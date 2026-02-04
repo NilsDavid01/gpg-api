@@ -27,6 +27,9 @@ jobs:
     - name: Publish
       run: dotnet publish GpgApi/GpgApi.csproj -c Release -o publish
 
+    - name: Copy EB extensions
+      run: cp -r .ebextensions publish/
+
     - name: Generate deployment package
       run: |
         cd publish
