@@ -4,5 +4,11 @@ An API written in C# that allows users to both encrypt and decrypt text-strings 
 # Dependencies
 
 * .NET 8 (Required by the API)
+* GnuPG (Required by the API)
 * Bash (Required by the client)
 * cURL (Required by the client)
+
+# How to run API
+```bash
+git clone https://github.com/NilsDavid01/gpg-api.git
+```
