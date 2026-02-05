@@ -54,6 +54,37 @@ list_keys() {
   curl -s "$API_URL/api/gpg/keys" | jq -r .keys
 }
 
+import_key() {
+	echo "Paste GPG key (Ctrl+D when done):"
+  KEY_DATA=$(cat)
+
+  curl -s -X POST "$API_URL/api/gpg/keys/import" \
+    -H "Content-Type: text/plain" \
+    --data-binary "$KEY_DATA"
+}
+
+export_key() {
+
+ read -p "Key ID or email to export: " KEY_ID
+
+  OUTPUT_FILE="exported-key.asc"
+
+  HTTP_CODE=$(curl -s -w "%{http_code}" \
+    -o "$OUTPUT_FILE" \
+    "$API_URL/api/gpg/keys/export?keyId=$KEY_ID")
+
+  if [ "$HTTP_CODE" != "200" ]; then
+    echo "Export failed (HTTP $HTTP_CODE)"
+    cat "$OUTPUT_FILE"
+    rm -f "$OUTPUT_FILE"
+    return
+  fi
+
+  echo "Key exported successfully to $OUTPUT_FILE"
+  echo "-----"
+  cat "$OUTPUT_FILE"
+
+}
 
 set_api() {
   read -p "API URL: " API_URL

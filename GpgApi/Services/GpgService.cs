@@ -69,5 +69,15 @@ Expire-Date: 0
     {
         return RunCommand("--list-keys");
     }
+
+    public void ImportKey(string armoredKey)
+    {
+        RunCommand("--import", armoredKey);
+    }
+
+    public string ExportPublicKey(string keyId)
+    {
+        return RunCommand($"--armor --export \"{keyId}\"");
+    }
 }
 

@@ -28,7 +28,7 @@ public class GpgController : ControllerBase
         return Ok(new { decrypted = result });
     }
 
-    // 🔐 NEW: Generate key on the API machine
+    // Generate key on the API machine
     [HttpPost("keys/generate")]
     public IActionResult GenerateKey([FromBody] GenerateKeyRequest request)
     {
@@ -36,13 +36,30 @@ public class GpgController : ControllerBase
         return Ok(new { status = "key generated" });
     }
 
-    // 🔍 NEW: List keys on the API machine
+    // List keys on the API machine
     [HttpGet("keys")]
     public IActionResult ListKeys()
     {
         var keys = _gpg.ListKeys();
         return Ok(new { keys });
     }
+
+     // Import a public key into the API machine
+    [HttpPost("keys/import")]
+    public IActionResult ImportKey([FromBody] string armoredKey)
+    {
+    _gpg.ImportKey(armoredKey);
+    return Ok(new { status = "key imported" });
+    }
+
+    // Export a public key from the API machine
+    [HttpGet("keys/export")]
+    public IActionResult ExportKey([FromQuery] string keyId)
+    {
+    var key = _gpg.ExportPublicKey(keyId);
+    return Content(key, "text/plain");
+}
+
 }
 
 public record EncryptRequest(string Text, string Recipient);
