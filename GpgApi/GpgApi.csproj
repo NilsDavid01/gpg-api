@@ -6,7 +6,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 
-    <!-- Completely disable OpenAPI / Swagger -->
     <EnableOpenApiAnalyzer>false</EnableOpenApiAnalyzer>
     <GenerateOpenApiDocs>false</GenerateOpenApiDocs>
   </PropertyGroup>
