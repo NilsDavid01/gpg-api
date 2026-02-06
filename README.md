@@ -4,6 +4,15 @@
 # gpg-api
 An API written in C# that allows users to both encrypt and decrypt text-strings using the GPG encryption method. This repository also conatins a client written in bash that allows users to easily interact with the API.
 
+# API end-points
+* /api/gpg/encrypt (Encrypts messages)
+* /api/gpg/decrypt (Decrypts messages)
+* /api/gpg/keys/generate (Generates GPG keys)
+* /api/gpg/keys (Lists available GPG keys)
+* /api/gpg/keys/export (Exports GPG keys)
+* /api/gpg/keys/import (Imports GPG keys)
+
+
 # Dependencies
 
 * .NET 8 (Required by the API)
