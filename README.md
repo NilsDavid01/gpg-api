@@ -48,4 +48,4 @@ sudo chmod +x gpg-client.sh
 ./gpg-client.sh
 ```
 
-# CI/CD project network diagram[Sketch.pdf](https://github.com/NilsDavid01/gpg-api/blob/feature/Sketch.pdf)
+# View CI/CD project network diagram by clicking [here](https://github.com/NilsDavid01/gpg-api/blob/feature/Sketch.pdf)
